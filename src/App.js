@@ -5,19 +5,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 
 function App() {
-  const listo = <FontAwesomeIcon icon="fa-thin fa-xmark" />
   const [inputValue, setInputValue] = useState("")
   const [lista, setLista] = useState([])
-  const [titulo, setTitulo] = useState("")
   return (
     
-    <div className='container ' id='containertask'>
+    <div className='container' style={{width: "50%"}}>
 
       <div className="input-group">
         <input id="titulo" type="text" aria-label="First name" className="form-control" placeholder='Titulo de mis tareas' 
        />
-        
-        
       </div>
 
       <div  className="input-group mb-3">
@@ -33,9 +29,10 @@ function App() {
 </div>
         <ul>
         {lista.map((item, index) => 
-          <li>
+          <li className='justify-content-between'>
             <p>{item}{""}
-            <button className="btn btn-outline-success"  onClick={() => setLista(lista.filter((t, currentIndex) => index !== currentIndex))}> X </button>
+            <button className="btn btn-outline-success"  
+            onClick={() => setLista(lista.filter((t, currentIndex) => index !== currentIndex))}> X </button>
             </p></li> )}
         </ul>       
       <div> <p className='task'>{lista.length} tareas</p></div>
