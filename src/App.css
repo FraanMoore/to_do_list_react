@@ -1,0 +1,38 @@
+div{
+    
+    background-image: url(https://static.vecteezy.com/system/resources/previews/008/508/128/original/watercolor-green-plant-free-png.png);
+    
+}
+
+#containertask{
+    padding: 10%;
+}
+#titulo{
+    font-weight: bold;
+    color: #395815;
+    border-color: green;
+    box-shadow: none;
+    
+}
+#box{
+    box-shadow: none;
+
+}
+li{
+    list-style:none;
+    background-color: white;
+    border-color: #395815;
+   
+}
+button{
+    display: flex;
+    position: relative;
+    border: none;
+    color: #395815;
+    font-weight: bold;
+    padding: 5px 5px;
+    outline: none;
+    width: 5%;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
