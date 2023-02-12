@@ -1,23 +1,38 @@
-import './App.css';
+
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from 'fontawesome';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 
 function App() {
   const [inputValue, setInputValue] = useState("")
   const [lista, setLista] = useState([])
+
   return (
     
-    <div className='container' style={{width: "50%"}}>
+    <div className='container' 
+    style={{
+      padding: "5%",
+      border: "10%",
+      background: 'url("https://static.vecteezy.com/system/resources/previews/008/508/128/original/watercolor-green-plant-free-png.png")',
+      width: "50%", 
+    }} >
 
       <div className="input-group">
-        <input id="titulo" type="text" aria-label="First name" className="form-control" placeholder='Titulo de mis tareas' 
+        <input type="text" aria-label="First name" className="form-control" placeholder='Titulo de mis tareas' 
+        style={{ 
+          fontweight: "bold",
+          color: "#395815",
+          bordercolor: "green",
+          boxshadow: "none",
+          }}
        />
       </div>
 
       <div  className="input-group mb-3">
-        <input id='box' type="text" className="form-control" placeholder="¿Qué harás hoy?" aria-label="Recipient's username" aria-describedby="button-addon2" 
+        <input type="text" className="form-control" placeholder="¿Qué harás hoy?" aria-label="Recipient's username" aria-describedby="button-addon2" 
+        style={{
+          boxshadow: "none",
+        }}  
         onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
         onKeyDown={(e) => {
@@ -27,11 +42,24 @@ function App() {
           }
         }}/>
 </div>
-        <ul>
-        {lista.map((item, index) => 
-          <li className='justify-content-between'>
+        <ul >
+        {lista.map((item, index) =>  
+          <li className="list-group-item d-flex" 
+          style={{
+            backgroundcolor: "none",
+            listStyle: "none",
+            bordercolor:"#395815",
+          }}>
             <p>{item}{""}
-            <button className="btn btn-outline-success"  
+            <button className="btn btn-outline-success justify-content-between"  
+            style={{
+              border: "none",
+              
+              fontweight: "bold",
+              padding: "5px 5px",
+              fontsize: "1.2em",
+              borderradius: "10px",
+            }}
             onClick={() => setLista(lista.filter((t, currentIndex) => index !== currentIndex))}> X </button>
             </p></li> )}
         </ul>       
