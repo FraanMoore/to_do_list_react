@@ -1,4 +1,5 @@
 
+import "./App.css";
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
@@ -17,13 +18,14 @@ function App() {
       width: "50%", 
     }} >
 
-      <div className="input-group">
-        <input type="text" aria-label="First name" className="form-control" placeholder='Titulo de mis tareas' 
+      <div className="input-group"> 
+        <input type="text" aria-label="First name" className="form-control border border-success " placeholder='Título de mis tareas' 
         style={{ 
-          fontweight: "bold",
+          fontWeight: 'bold' ,
           color: "#395815",
           bordercolor: "green",
-          boxshadow: "none",
+          boxshadow:"none" ,
+          outline:"none",
           }}
        />
       </div>
@@ -32,6 +34,7 @@ function App() {
         <input type="text" className="form-control" placeholder="¿Qué harás hoy?" aria-label="Recipient's username" aria-describedby="button-addon2" 
         style={{
           boxshadow: "none",
+          outline:"none",
         }}  
         onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
@@ -46,6 +49,7 @@ function App() {
         {lista.map((item, index) =>  
           <li className="list-group-item d-flex" 
           style={{
+            boxshadow: "none",
             backgroundcolor: "none",
             listStyle: "none",
             bordercolor:"#395815",
