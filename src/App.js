@@ -3,10 +3,12 @@ import "./App.css";
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
+import { list } from "fontawesome";
 
 function App() {
   const [inputValue, setInputValue] = useState("")
   const [lista, setLista] = useState([])
+  
 
   return (
     
@@ -47,15 +49,15 @@ function App() {
 </div>
         <ul >
         {lista.map((item, index) =>  
-          <li className="list-group-item d-flex" 
+          <li className="list-group-item d-flex justify-content-between" 
           style={{
             boxshadow: "none",
             backgroundcolor: "none",
             listStyle: "none",
             bordercolor:"#395815",
           }}>
-            <p>{item}{""}
-            <button className="btn btn-outline-success justify-content-between"  
+            <p>{item}{""} </p>
+            <button className="btn btn-outline-success"  
             style={{
               border: "none",
               
@@ -65,13 +67,15 @@ function App() {
               borderradius: "10px",
             }}
             onClick={() => setLista(lista.filter((t, currentIndex) => index !== currentIndex))}> X </button>
-            </p></li> )}
+            </li> )} 
         </ul>       
+        
       <div> <p className='task'>{lista.length} tareas</p></div>
    
-   
+      
     </div>
   );
+  
+  
 }
-
 export default App;
